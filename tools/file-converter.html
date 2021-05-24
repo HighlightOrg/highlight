@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Free Online Image Compressor | Highlight</title>
+    <meta name="title" content="Free Online Image Compressor | Highlight">
+    <meta name="description" content="Highlight is a collection of privacy-first tools to accomplish your everyday internet tasks! We have tools for developers, SEO managers, hobbyists, etc...">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://arc.io/widget.min.js#bPSRgKJ4"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Halfmoon CSS -->
+    <link href="/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/highlight_light.ico" />
+</head>
+
+<body data-set-preferred-mode-onload="true">
+    <!-- Set preferred theme before the page renders -->
+    <script src="/js/theme.js"></script>
+
+    <div class="modal" id="image-convert-preview" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <a href="#" class="close" role="button" aria-label="Close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="modal-title">Output</h5>
+            <div id="image-convert-preview-image"></div>
+            <div class="text-right mt-20">
+              <a href="#" class="btn mr-5" role="button" data-dismiss="modal">Close</a>
+              <a href="#" id="image-convert-download" class="btn btn-primary" role="button" data-dismiss="modal">Download image</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Page wrapper with navbar, sidebar, navbar fixed bottom, and sticky alerts (toasts) -->
+    <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom with-custom-webkit-scrollbars with-custom-css-scrollbars" data-sidebar-type="overlayed-sm-and-down">
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts"></div>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <button id="toggle-sidebar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <a href="#" class="navbar-brand ml-10 ml-sm-20">
+                <img src="/img/highlight_light.svg" class="hidden-dm" alt="Highlight">
+                <img src="/img/highlight_dark.svg" class="hidden-lm" alt="Highlight">
+                <span class="d-none d-sm-flex">Highlight</span>
+            </a>
+            <div class="navbar-content ml-auto">
+                <button class="btn btn-action mr-10" type="button" onclick="halfmoon.toggleDarkMode()">
+                    <i class="fas fa-moon"></i>
+                    <span class="sr-only">Toggle dark mode</span>
+                </button>
+                <div class="account-loader">
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+        <!-- Sidebar -->
+        <div class="sidebar"></div>
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+            <ul class="tabs">
+                <li data-tab-target="#image-tab" class="active tab">Image conversion</li>
+                <li data-tab-target="#video-tab" class="tab">Video conversion</li>
+                <li data-tab-target="#audio-tab" class="tab">Audio conversion</li>
+            </ul>
+            <div class="content">
+                <div class="tab-content">
+                    <div id="image-tab" data-tab-content class="active">
+                        <h2>Image Conversion</h2>
+                        To convert your images, just choose your desired output format and upload your images. You can also enter an URL.
+                        <br>
+                        <br>
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Did you know?</h4>
+                            None of the submitted files will be sent to a server. All image transformations are processed by your browser, guaranteeing absolute protection and anonymity of your images.
+                        </div>
+                        <br>
+                        <label for="image-convert-select">Select the desired output format</label>
+                        <select class="form-control" id="image-convert-select">
+                            <option value="jpg">.JPG</option>
+                            <option value="png">.PNG</option>
+                            <option value="gif">.GIF</option>
+                            <option value="psd">.PSD</option>
+                            <option value="tiff">.TIFF</option>
+                            <option value="xcf">.XCF</option>
+                            <option value="bmp">.BMP</option>
+                            <option value="tga">.TGA</option>
+                            <option value="miff">.MIFF</option>
+                            <option value="ico">.ICO</option>
+                            <option value="dcm">.DCM</option>
+                            <option value="xpm">.XPM</option>
+                            <option value="pcx">.PCX</option>
+                            <option value="fits">.FITS</option>
+                            <option value="ppm">.PPM</option>
+                            <option value="pgm">.PGM</option>
+                            <option value="pfm">.PFM</option>
+                            <option value="mng">.MNG</option>
+                            <option value="hdr">.HDR</option>
+                            <option value="dds">.DDS</option>
+                            <option value="otb">.OTB</option>
+                            <option value="txt">.TXT</option>
+                            <option value="psb">.PSB</option>
+                        </select>
+                        <br>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm mr-sm-20">
+                                    <div class="form-group">
+                                        <label for="image-convert-url">Image URL</label>
+                                        <input type="text" class="form-control" id="image-convert-url" placeholder="https://www.example.com/image.png">
+                                    </div>
+                                    <button id="image-convert-url-btn" class="btn btn-primary btn-block" disabled="disabled">Convert</button>
+                                </div>
+                                <div class="col-sm d-block d-sm-none">
+                                    <hr>
+                                </div>
+                                <div class="col-sm ml-sm-20">
+                                    <div class="custom-file">
+                                        <input type="file" id="image-convert-file" accept=".jpg,.png,.gif,.psd,.tiff,.xcf,.bmp,.tga,.miff,.ico,.dcm,.xpm,.pcx,.fits,.ppm,.pgm,.pfm,.mng,.hdr,.dds,.otb,.txt,.psb">
+                                        <label for="image-convert-file">Choose an image</label>
+                                    </div>
+                                    <br>
+                                    <button id="image-convert-file-btn" class="btn btn-primary btn-block" disabled="disabled">Convert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="video-tab" data-tab-content>
+                        <span style="font-size: 3rem; font-weight: 600;" class="gradient-text"><i class="fas fa-tools"></i> We are working on it...</span>
+                    </div>
+                    <div id="audio-tab" data-tab-content>
+                        <span style="font-size: 3rem; font-weight: 600;" class="gradient-text"><i class="fas fa-tools"></i> We are working on it...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar fixed bottom -->
+        <nav class="navbar navbar-fixed-bottom">
+
+        </nav>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5qwUZd0VzJ81iFA_C2uCh8O6_8BF5w64",
+            authDomain: "highlight-d1cc8.firebaseapp.com",
+            projectId: "highlight-d1cc8",
+            storageBucket: "highlight-d1cc8.appspot.com",
+            messagingSenderId: "1073207161212",
+            appId: "1:1073207161212:web:18269cbb6bf26b8e88f4f9",
+            measurementId: "G-07BBH1E5E8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="/js/halfmoon.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script defer src="/js/cookies.js"></script>
+    <script defer src="/js/tabs.js"></script>
+    <script defer src="https://unpkg.com/tiny-save-as"></script>
+    <script type="module" src="/js/tools/file-converter.js"></script>
+</body>
+
+</html>
