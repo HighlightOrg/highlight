@@ -20,6 +20,16 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/img/highlight_light.ico" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3Y13G78VV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S3Y13G78VV');
+    </script>
 </head>
 
 <body data-set-preferred-mode-onload="true">
@@ -28,19 +38,19 @@
 
     <div class="modal" id="image-convert-preview" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <a href="#" class="close" role="button" aria-label="Close" data-dismiss="modal">
-              <span aria-hidden="true">&times;</span>
-            </a>
-            <h5 class="modal-title">Output</h5>
-            <div id="image-convert-preview-image"></div>
-            <div class="text-right mt-20">
-              <a href="#" class="btn mr-5" role="button" data-dismiss="modal">Close</a>
-              <a href="#" id="image-convert-download" class="btn btn-primary" role="button" data-dismiss="modal">Download image</a>
+            <div class="modal-content">
+                <a href="#" class="close" role="button" aria-label="Close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+                <h5 class="modal-title">Output</h5>
+                <div id="image-convert-preview-image"></div>
+                <div class="text-right mt-20">
+                    <a href="#" class="btn mr-5" role="button" data-dismiss="modal">Close</a>
+                    <a href="#" id="image-convert-download" class="btn btn-primary" role="button" data-dismiss="modal">Download image</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <!-- Page wrapper with navbar, sidebar, navbar fixed bottom, and sticky alerts (toasts) -->
     <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom with-custom-webkit-scrollbars with-custom-css-scrollbars" data-sidebar-type="overlayed-sm-and-down">

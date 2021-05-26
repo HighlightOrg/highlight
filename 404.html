@@ -2,83 +2,93 @@
 <html lang="en">
 
 <head>
-	<title>Highlight | Free Privacy-first Tools for Everyday Tasks</title>
-	<meta name="title" content="Highlight | Free Privacy-first Tools for Everyday Tasks">
-	<meta name="description" content="Highlight is a collection of privacy-first tools to accomplish your everyday internet tasks! We have tools for developers, SEO managers, hobbyists, etc...">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight | Free Privacy-first Tools for Everyday Tasks</title>
+    <meta name="title" content="Highlight | Free Privacy-first Tools for Everyday Tasks">
+    <meta name="description" content="Highlight is a collection of privacy-first tools to accomplish your everyday internet tasks! We have tools for developers, SEO managers, hobbyists, etc...">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script async src="https://arc.io/widget.min.js#bPSRgKJ4"></script>
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script async src="https://arc.io/widget.min.js#bPSRgKJ4"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-	<!-- Halfmoon CSS -->
-	<link href="/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <!-- Halfmoon CSS -->
+    <link href="/css/halfmoon-variables.min.css" rel="stylesheet" />
 
-	<!-- Favicon -->
-	<link rel="icon" href="/img/highlight_light.ico" />
+    <!-- Favicon -->
+    <link rel="icon" href="/img/highlight_light.ico" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3Y13G78VV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S3Y13G78VV');
+    </script>
 </head>
 
 <body data-set-preferred-mode-onload="true">
-	<!-- Set preferred theme before the page renders -->
-	<script src="/js/theme.js"></script>
+    <!-- Set preferred theme before the page renders -->
+    <script src="/js/theme.js"></script>
 
-	<!-- Page wrapper with navbar, sidebar, navbar fixed bottom, and sticky alerts (toasts) -->
-	<div class="page-wrapper with-navbar with-sidebar with-custom-webkit-scrollbars with-custom-css-scrollbars" data-sidebar-type="overlayed-sm-and-down">
-		<!-- Sticky alerts (toasts), empty container -->
-		<div class="sticky-alerts"></div>
-		<!-- Navbar -->
-		<nav class="navbar"></nav>
-		<!-- Sidebar overlay -->
-		<div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-		<!-- Sidebar -->
-		<div class="sidebar"></div>
-		<!-- Content wrapper -->
-		<div class="content-wrapper">
-			<div class="card">
-				<h1 style="font-size: 5rem;"><span style="font-weight: 700;" class="gradient-text">404 | Not found</span></h1>
-				<span style="font-size: 3rem;">Oops, we couldn't find the page that you were looking for!</span>
-			</div>
-			<div class="custom-footer"></div>
-		</div>
-		<!-- Navbar fixed bottom -->
-		<nav class="navbar navbar-fixed-bottom">
+    <!-- Page wrapper with navbar, sidebar, navbar fixed bottom, and sticky alerts (toasts) -->
+    <div class="page-wrapper with-navbar with-sidebar with-custom-webkit-scrollbars with-custom-css-scrollbars" data-sidebar-type="overlayed-sm-and-down">
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts"></div>
+        <!-- Navbar -->
+        <nav class="navbar"></nav>
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+        <!-- Sidebar -->
+        <div class="sidebar"></div>
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+            <div class="card">
+                <h1 style="font-size: 5rem;"><span style="font-weight: 700;" class="gradient-text">404 | Not found</span></h1>
+                <span style="font-size: 3rem;">Oops, we couldn't find the page that you were looking for!</span>
+            </div>
+            <div class="custom-footer"></div>
+        </div>
+        <!-- Navbar fixed bottom -->
+        <nav class="navbar navbar-fixed-bottom">
 
-		</nav>
-	</div>
+        </nav>
+    </div>
 
 
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 
-	<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
 
-	<script>
-		// Your web app's Firebase configuration
-		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-		var firebaseConfig = {
-			apiKey: "AIzaSyC5qwUZd0VzJ81iFA_C2uCh8O6_8BF5w64",
-			authDomain: "highlight-d1cc8.firebaseapp.com",
-			projectId: "highlight-d1cc8",
-			storageBucket: "highlight-d1cc8.appspot.com",
-			messagingSenderId: "1073207161212",
-			appId: "1:1073207161212:web:18269cbb6bf26b8e88f4f9",
-			measurementId: "G-07BBH1E5E8"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-		firebase.analytics();
-	</script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5qwUZd0VzJ81iFA_C2uCh8O6_8BF5w64",
+            authDomain: "highlight-d1cc8.firebaseapp.com",
+            projectId: "highlight-d1cc8",
+            storageBucket: "highlight-d1cc8.appspot.com",
+            messagingSenderId: "1073207161212",
+            appId: "1:1073207161212:web:18269cbb6bf26b8e88f4f9",
+            measurementId: "G-07BBH1E5E8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 
-	<script src="/js/halfmoon.min.js"></script>
-	<script src="/js/app.js"></script>
-	<script defer src="/js/cookies.js"></script>
+    <script src="/js/halfmoon.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script defer src="/js/cookies.js"></script>
 </body>
 
 </html>
