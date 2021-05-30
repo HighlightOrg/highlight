@@ -169,6 +169,7 @@ $(document).ready(function () {
                     $(articleSelector).append(`<img src="${res[index]['metadata']['image']}" alt="${res[index]['metadata']['imageAlt']}" loading="lazy">`);
                     $(articleSelector).parent().append(`<div class="article-meta d-flex justify-content-center"><div class="card"><h3 class="card-title">${res[index]['metadata']['author']}</h3><div class="container-fluid"><div class="row"><div class="col-auto mr-10"><img src="${res[index]['metadata']['authorImage'] ? res[index]['metadata']['authorImage'] : '/img/highlight_light.svg'}"></div><div class="col ml-10">${res[index]['metadata']['authorBio']}</div></div></div></div></div>`);
                     document.title = `${res[index]['title']} | Highlight Blog`;
+                    $('head').append(`<meta name="title" content="${res[index]['title']} | Highlight Blog"><meta name="description" content="${res[index]['brief']}"><meta property="og:image" content="${res[index]['metadata']['image']}"><meta property="og:title" content="${res[index]['title']} | Highlight Blog"><meta property="og:description" content="${res[index]['brief']}">`);
                     return false;
                 }
             });
