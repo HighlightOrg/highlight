@@ -1,9 +1,16 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>https://highlight.eu.org/</loc>
     </url>
     <url>
         <loc>https://highlight.eu.org/about</loc>
+    </url>
+    <url>
+        <loc>https://highlight.eu.org/blog</loc>
+    </url>
+    <url>
+        <loc>https://highlight.eu.org/blog/welcome-to-highlight</loc>
     </url>
     <url>
         <loc>https://highlight.eu.org/legal/cookies</loc>
