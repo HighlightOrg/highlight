@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Welcome to Highlight's Blog!",
+        "brief": "We've just launched our new Blog! Read on to find out what kinds of content we will be posting and how you can contribute.",
+        "published": "2021/05/30",
+        "metadata": {
+            "image": "https://html.sammy-codes.com/images/background.jpg",
+            "imageAlt": "A crispy yellow background with two gray pencils on the left.",
+            "author": "The Highlight Team",
+            "authorImage": "",
+            "authorBio": "The official Highlight Team.",
+            "articleId": "welcome-to-highlight"
+        },
+        "tags": [
+            "welcome",
+            "seo"
+        ]
+    }
+]

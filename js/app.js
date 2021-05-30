@@ -35,6 +35,14 @@ function signOut() {
         // Sign-out successful.
     }).catch((error) => {
         // An error happened.
+        halfmoon.initStickyAlert({
+            content: "We couldn't sign you out! Check the console for additional details.",
+            title: "Uh, oh!",
+            alertType: "alert-danger",
+            hasDismissButton: true,
+            timeShown: 5000
+        });
+        console.log(`We couldn't sign you out! ERROR: ${error}`);
     });
 }
 
@@ -45,10 +53,10 @@ $(document).ready(function () {
             <i class="fas fa-bars"></i>
         </button>
     </div>
-    <a href="/" class="navbar-brand ml-10 ml-sm-20">
+    <a href="${$('.navbar').data('navbar-link') ? $('.navbar').data('navbar-link') : '/'}" class="navbar-brand ml-10 ml-sm-20">
         <img src="/img/highlight_light.svg" class="hidden-dm" alt="Highlight">
         <img src="/img/highlight_dark.svg" class="hidden-lm" alt="Highlight">
-        <span class="d-none d-sm-flex">Highlight</span>
+        <span class="d-none d-sm-flex">${$('.navbar').data('navbar-text') ? $('.navbar').data('navbar-text') : 'Highlight'}</span>
     </a>
     <div class="navbar-content ml-auto">
         <button class="btn btn-action mr-10" type="button" onclick="halfmoon.toggleDarkMode()">
