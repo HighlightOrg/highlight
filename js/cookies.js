@@ -1,12 +1,12 @@
 const cookieConstentHTML = `
 <div class="cookie-wrapper">
-    <img src="/img/cookie.png" alt="">
+    <img src="/img/cookie.png" alt="Cookie">
     <div class="content">
       <h3>Cookies Consent</h3>
       <p>This website use cookies to ensure you get the best experience on our website.</p>
       <div class="buttons">
         <button class="accept-cookies item">I understand</button>
-        <a href="/legal/cookies" class="item">Learn more</a>
+        <a href="/legal/cookies" class="item">Cookie policy</a>
       </div>
     </div>
 </div>
