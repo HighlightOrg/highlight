@@ -120,6 +120,7 @@ $(document).ready(function () {
     $('.article-container article.article-content').each(function (index) {
         let articleId = $(this).parent().data('article-content-id');
         let articleSelector = $(this);
+        $(articleSelector).html('<div class="d-flex justify-content-center"><div class="loading-spinner mt-20 mb-20"></div></div>');
         $.ajax({
             url: `/posts/${articleId}.md`,
             type: 'GET',
@@ -166,7 +167,7 @@ $(document).ready(function () {
             let articleSelector = $(this);
             $.each(res, function (index, value) {
                 if (res[index]['metadata']['articleId'] == articleId) {
-                    $(articleSelector).append(`<img src="${res[index]['metadata']['image']}" alt="${res[index]['metadata']['imageAlt']}" loading="lazy">`);
+                    $(articleSelector).append(`<img src="${res[index]['metadata']['image']}" alt="${res[index]['metadata']['imageAlt']}" onload="$(this).parent().find('.img-placeholder').remove(); $(this).css('display', 'block');">`);
                     $(articleSelector).parent().append(`<div class="article-meta d-flex justify-content-center"><div class="card"><h3 class="card-title">${res[index]['metadata']['author']}</h3><div class="container-fluid"><div class="row"><div class="col-auto mr-10"><img src="${res[index]['metadata']['authorImage'] ? res[index]['metadata']['authorImage'] : '/img/highlight_light.svg'}"></div><div class="col ml-10">${res[index]['metadata']['authorBio']}</div></div></div></div></div>`);
                     document.title = `${res[index]['title']} | Highlight Blog`;
                     $('head').append(`<meta name="title" content="${res[index]['title']} | Highlight Blog"><meta name="description" content="${res[index]['brief']}"><meta property="og:image" content="${res[index]['metadata']['image']}"><meta property="og:title" content="${res[index]['title']} | Highlight Blog"><meta property="og:description" content="${res[index]['brief']}">`);
@@ -186,7 +187,8 @@ $(document).ready(function () {
         $.each(loadMoreContent, function (index, value) {
             $('.articles').append(`
             <div class="card p-0 article-preview-container">
-                <img src="${value['metadata']['image']}" alt="${value['metadata']['imageAlt']}" loading="lazy" class="img-fluid rounded-top" alt="...">
+                <div class="img-placeholder rounded-top"></div>
+                <img src="${value['metadata']['image']}" alt="${value['metadata']['imageAlt']}" class="img-fluid rounded-top" onload="$(this).parent().find('.img-placeholder').remove(); $(this).css('display', 'block');">
                 <div class="content">
                     <h2 class="content-title">
                         <a href="/blog/${value['metadata']['articleId']}">${value['title']}</a> by ${value['metadata']['author']}
@@ -214,6 +216,7 @@ $(document).ready(function () {
         success: function (res) {
             displayArticleInformation(res);
             articles = res;
+            $('.loading-spinner').parent().remove();
             loadMoreArticles();
         },
         error: function () {
