@@ -18,7 +18,7 @@ if (document.cookie.indexOf("acceptCookies=true") === -1) {
 
 $(document).on('click', '.accept-cookies', function () {
     // Save preferences for one month
-    document.cookie = "acceptCookies=true; max-age=" + 60 * 60 * 24 * 30;
+    document.cookie = "acceptCookies=true; path=/; max-age=" + 60 * 60 * 24 * 30;
     if (document.cookie) {
         $('.cookie-wrapper').addClass('hide');
     } else {

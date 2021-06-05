@@ -1,3 +1,18 @@
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+    apiKey: "AIzaSyC5qwUZd0VzJ81iFA_C2uCh8O6_8BF5w64",
+    authDomain: "highlight-d1cc8.firebaseapp.com",
+    projectId: "highlight-d1cc8",
+    storageBucket: "highlight-d1cc8.appspot.com",
+    messagingSenderId: "1073207161212",
+    appId: "1:1073207161212:web:18269cbb6bf26b8e88f4f9",
+    measurementId: "G-07BBH1E5E8"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function signInWithGoogle() {

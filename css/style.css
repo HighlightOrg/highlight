@@ -237,6 +237,7 @@
         border-radius: 15px;
         max-width: 365px;
     }
+
     .cookie-wrapper.hide {
         opacity: 0;
         pointer-events: none;
@@ -799,4 +800,59 @@ code {
     background: var(--dark-color);
     -webkit-box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .4) !important;
     box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .4) !important;
+}
+
+/*
+ * STYLES FOR BOTTOM NOTIFICATION
+*/
+
+.bottom-notification {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100 !important;
+    background-color: var(--gray-color-light);
+    padding: 1em 5em 1em 5em;
+    animation: ease-out slideInFromBottom 5s;
+    -webkit-box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .9) !important;
+    box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .9) !important;
+}
+
+.dark-mode .bottom-notification{
+    background-color: var(--dark-color);
+}
+
+.bottom-notification-close {
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    transition: all linear .1s;
+}
+
+.bottom-notification-close:hover {
+    transform: scale(2);
+    background: rgb(51, 161, 253);
+    background: linear-gradient(45deg, rgba(51, 161, 253, 1) 0%, rgba(253, 202, 64, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .bottom-notification-close:hover {
+    background: rgb(33, 118, 255);
+    background: linear-gradient(45deg, rgba(33, 118, 255, 1) 0%, rgba(247, 152, 36, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
 }
