@@ -1,0 +1,14 @@
+[
+    {
+        "articleId": "welcome-to-highlight",
+        "shareTexts": {
+            "twitter": {
+                "text": "Highlight launched a blog! Check it out here: %%%LINK%%%",
+                "via": "HighlightTools"
+            },
+            "facebook": {
+                "text": "Highlight launched a blog! Check it out here: %%%LINK%%%"
+            } 
+        }
+    }
+]
