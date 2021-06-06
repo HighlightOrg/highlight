@@ -37,7 +37,7 @@ $(document).ready(function () {
         return new Promise((resolve, reject) => {
             // Check how many times the URL has been shared on Twitter
 
-            let url = `http://opensharecount.com/count.json?url=${shareURL}`;
+            let url = `https://opensharecount.com/count.json?url=${shareURL}`;
             if (localCache.exist(url)) {
                 twitterShares = localCache.get(url);
                 twitterShares = twitterShares['count'];
